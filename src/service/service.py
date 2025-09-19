@@ -6,8 +6,12 @@ from src.model.entity import TodoItem
 class TodoListService:
     """Service for managing a todo list."""
 
-    __todo_items: dict[int, TodoItem] = {}
-    __next_id: int = 1
+    __todo_items: dict[int, TodoItem]
+    __next_id: int
+
+    def __init__(self) -> None:
+        self.__todo_items = {}
+        self.__next_id = 1
 
     def __get_id(self) -> int:
         current_id = self.__next_id
