@@ -19,4 +19,5 @@ test = [
     "pytest>=8.4.2",
 ]
 [tool.pdm.scripts]
-test = "pytest tests/unit"
+unit-test = "pytest tests/unit"
+integration-test = "pytest tests/integration"
