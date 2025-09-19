@@ -28,3 +28,8 @@ class TodoListService:
         """Delete a todo item by ID."""
         if item_id in self.__todo_items:
             del self.__todo_items[item_id]
+
+    def modify_item(self, item_id: int, new_title: str) -> None:
+        """Modify a todo item by ID."""
+        if item_id in self.__todo_items:
+            self.__todo_items[item_id]["title"] = new_title
