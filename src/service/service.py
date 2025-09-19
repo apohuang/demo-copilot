@@ -17,7 +17,7 @@ class TodoListService:
     def add_item(self, title: str) -> None:
         """Add a new todo item."""
         item_id = self.__get_id()
-        new_item: TodoItem = {"id": item_id, "title": title, "completed": False}
+        new_item = TodoItem(id=item_id, title=title, completed=False)
         self.__todo_items[item_id] = new_item
 
     def list_all_items(self) -> str:
@@ -32,4 +32,4 @@ class TodoListService:
     def modify_item(self, item_id: int, new_title: str) -> None:
         """Modify a todo item by ID."""
         if item_id in self.__todo_items:
-            self.__todo_items[item_id]["title"] = new_title
+            self.__todo_items[item_id].title = new_title
